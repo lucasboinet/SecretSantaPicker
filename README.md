@@ -14,7 +14,7 @@
 
 - #### Final step
 
-    POST request this url `http://localhost/santas` and provide in the body a configurations like below.
+    POST request this url `http://localhost:3000/santas` and provide in the body a configurations like below.
 
 ## Configurations
 
@@ -30,3 +30,8 @@
 | UNAUTHORIZED_PAIR | An array of object that will define participant who wont be able to be the santa of a particular one : `[{userId: 1, ofUserId: 1}, ...]` |
 | MIN_PLAYERS | A number that define the minimum of players that can participate to the secret santa |
 | MAX_PLAYERS | A number that define the maximum of players that can participate to the secret santa |
+
+## Ports used
+
+API Gateway: **3000**
+Santas Service: **3002** 
