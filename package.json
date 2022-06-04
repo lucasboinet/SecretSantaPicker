@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "service-santas": "nodemon services/santas/server.js"
+    "start": "node index.js",
+    "service-santas": "node services/santas/server.js"
   },
   "author": "",
   "license": "ISC",
