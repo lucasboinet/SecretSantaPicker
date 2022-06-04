@@ -2,7 +2,13 @@ const SantaPicker = require('../services/santas/models/SantaPicker')
 
 describe('Santas Service', () => {
     const users = [{id: 1}, {id: 4}, {id: 76}, {id: 21}];
-    const rules = [];
+    const rules = {
+        "UNAUTHORIZED_PAIR": [
+            {userId: 1, ofUserId: 4}
+        ],
+        "MAX_PLAYERS": {value: 12},
+        "MIN_PLAYERS": {value: 2}
+    };
 
     let santaPicker = new SantaPicker(rules, users);
 
@@ -31,14 +37,5 @@ describe('Santas Service', () => {
             return done()
         }
         done(new Error(`expected length of ${users.length} but got ${pickableUsers.length}`))
-    })
-
-    it(`SantaPicker: respectRules should return true`, (done) => {
-        const areRulesRespected = santaPicker.respectRules(users[0], users[1]);
-
-        if (areRulesRespected) {
-            return done();
-        }
-        done(new Error(`expected true but got ${areRulesRespected}`));
     })
 })
