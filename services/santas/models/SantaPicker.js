@@ -53,7 +53,7 @@ class SantaPicker {
                 const rule = this.rules[identifier];
                 switch(identifier) {
                     case 'UNAUTHORIZED_PAIR':
-                        respectRules = !(rule.userId === offerer.id && rule.ofUserId === offered.id);
+                        respectRules = !(rule.map((duo) => duo.userId === offerer.id && duo.ofUserId === offered.id).includes(true));
                         break;
                     case 'MAX_PLAYERS':
                         if (this.users.length > rule.value) {
